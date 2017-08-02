@@ -1,5 +1,5 @@
 # NotationView
 
-[![Build Status](https://travis-ci.org/dn-m/Music.svg?branch=master)](https://travis-ci.org/dn-m/Music)
+[![Build Status](https://travis-ci.org/dn-m/NotationView.svg?branch=master)](https://travis-ci.org/dn-m/NotationView)
 
 Structures for displaying music notation
