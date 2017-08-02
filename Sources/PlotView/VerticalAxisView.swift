@@ -6,6 +6,4 @@
 //
 //
 
-public protocol VerticalAxisView: AxisView {
-    typealias Position = VerticalAxisPosition
-}
+public protocol VerticalAxisView: AxisView where Position == VerticalAxisPosition { }
