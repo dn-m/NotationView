@@ -1,0 +1,61 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "Graphics",
+        "repositoryURL": "https://github.com/dn-m/Graphics",
+        "state": {
+          "branch": "master",
+          "revision": "4cb9f5fadb70eca5946412df9f9f650d986bab1c",
+          "version": null
+        }
+      },
+      {
+        "package": "Math",
+        "repositoryURL": "https://github.com/dn-m/Math",
+        "state": {
+          "branch": "master",
+          "revision": "d1284e043377c0b924cba2ffa2ab0b9aa9dd246f",
+          "version": null
+        }
+      },
+      {
+        "package": "Music",
+        "repositoryURL": "https://github.com/dn-m/Music",
+        "state": {
+          "branch": "master",
+          "revision": "25590f06824bd405cc0c8a269274262bb3487e8c",
+          "version": null
+        }
+      },
+      {
+        "package": "NotationModel",
+        "repositoryURL": "https://github.com/dn-m/NotationModel",
+        "state": {
+          "branch": "master",
+          "revision": "85173280373fbfb8b1687e4f1b0ba2e2a9181673",
+          "version": null
+        }
+      },
+      {
+        "package": "SWXMLHash",
+        "repositoryURL": "https://github.com/drmohundro/SWXMLHash",
+        "state": {
+          "branch": null,
+          "revision": "3959d0799b045b423680d3c99c8359b8dfe288a5",
+          "version": "4.1.1"
+        }
+      },
+      {
+        "package": "Structure",
+        "repositoryURL": "https://github.com/dn-m/Structure",
+        "state": {
+          "branch": "master",
+          "revision": "76040aafd147d36ca0553de78ad3cdda21045665",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
