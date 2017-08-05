@@ -24,6 +24,6 @@ let package = Package(
         // Tests
         .testTarget(name: "PlotViewTests", dependencies: ["PlotView", "GraphicsTesting"]),
         .testTarget(name: "StaffViewTests", dependencies: ["StaffView"]),
-        .testTarget(name: "RhythmViewTests", dependencies: ["RhythmView"])
+        .testTarget(name: "RhythmViewTests", dependencies: ["RhythmView", "GraphicsTesting"])
     ]
 )
