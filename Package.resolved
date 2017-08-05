@@ -6,7 +6,7 @@
         "repositoryURL": "https://github.com/dn-m/Graphics",
         "state": {
           "branch": "master",
-          "revision": "4cb9f5fadb70eca5946412df9f9f650d986bab1c",
+          "revision": "8d810deb42610250f42ebb7b8c1473e8a22736ee",
           "version": null
         }
       },
@@ -24,7 +24,7 @@
         "repositoryURL": "https://github.com/dn-m/Music",
         "state": {
           "branch": "master",
-          "revision": "25590f06824bd405cc0c8a269274262bb3487e8c",
+          "revision": "27f653861d84b6fa881a6346e8dcdfce7fe83911",
           "version": null
         }
       },
@@ -51,7 +51,7 @@
         "repositoryURL": "https://github.com/dn-m/Structure",
         "state": {
           "branch": "master",
-          "revision": "76040aafd147d36ca0553de78ad3cdda21045665",
+          "revision": "81d894ed931864734c73f9507e5d2f147b40a363",
           "version": null
         }
       }
