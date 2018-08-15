@@ -6,7 +6,7 @@
 //
 //
 
-import Restructure
+import DataStructures
 import Geometry
 import Path
 import Rendering

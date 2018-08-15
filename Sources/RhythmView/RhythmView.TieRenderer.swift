@@ -6,8 +6,8 @@
 //
 //
 
-import Rhythm
-import BeamedRhythm
+import Duration
+import SpelledRhythm
 import Geometry
 import Path
 import Rendering

@@ -6,7 +6,7 @@
 //
 //
 
-import BeamedRhythm
+import SpelledRhythm
 import Geometry
 import Path
 import Rendering
@@ -55,9 +55,9 @@ public struct BeamsView: Renderable {
         self.color = color
     }
 
-    public init(rhythmSpelling: RhythmSpelling, positions: [Double], configuration: Configuration) {
+    public init(beaming: Beaming, positions: [Double], configuration: Configuration) {
         let builder = Builder(configuration: configuration)
-        builder.prepare(rhythmSpelling, at: positions)
+        builder.prepare(beaming, at: positions)
         self = builder.build()
     }
 }

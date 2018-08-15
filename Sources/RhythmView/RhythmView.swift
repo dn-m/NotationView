@@ -6,8 +6,8 @@
 //
 //
 
-import Rhythm
-import BeamedRhythm
+import Duration
+import SpelledRhythm
 import Rendering
 import QuartzCore
 

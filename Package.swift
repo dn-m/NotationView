@@ -12,14 +12,14 @@ let package = Package(
     ],
     dependencies: [
         .package(url: "https://github.com/dn-m/Graphics", .branch("master")),
-        .package(url: "https://github.com/dn-m/NotationModel", .branch("master"))
+        .package(url: "https://github.com/dn-m/NotationModel", from: "0.3.0")
     ],
     targets: [
 
         // Sources
         .target(name: "PlotView", dependencies: ["PlotModel", "Rendering"]),
         .target(name: "StaffView", dependencies: ["PlotView", "StaffModel"]),
-        .target(name: "RhythmView", dependencies: ["Rendering", "BeamedRhythm"]),
+        .target(name: "RhythmView", dependencies: ["Rendering", "SpelledRhythm"]),
 
         // Tests
         .testTarget(name: "PlotViewTests", dependencies: ["PlotView", "GraphicsTesting"]),
