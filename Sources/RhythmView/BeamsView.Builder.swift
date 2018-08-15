@@ -6,14 +6,15 @@
 //
 //
 
-import DictionaryProtocol
-import BeamedRhythm
+import DataStructures
+import SpelledRhythm
 import Geometry
 import Path
 import Rendering
 
 extension BeamsView {
 
+    // FIXME: Remove Generic requirement
     public final class Builder {
 
         /// Configuration of `BeamsView`.
@@ -23,7 +24,7 @@ extension BeamsView {
         private var beamSegments: [Int: [(Double, Double)]]
 
         /// Beamlet positions with direction.
-        private var beamlets: [Int: [(Double, RhythmSpelling.BeamJunction.BeamletDirection)]]
+        private var beamlets: [Int: [(Double, Beaming.BeamletDirection)]]
 
         /// Previous x-values by level.
         private var start: [Int: Double]
@@ -54,7 +55,7 @@ extension BeamsView {
         public func addBeamlet(
             at x: Double,
             on level: Int,
-            direction: RhythmSpelling.BeamJunction.BeamletDirection
+            direction: Beaming.BeamletDirection
         )
         {
             beamlets.safelyAppend((x,direction), toArrayWith: level)
@@ -62,20 +63,20 @@ extension BeamsView {
 
         /// Add all of the nececessary components for the given `rhythmSpelling` at the given
         /// `positions`.
-        public func prepare(_ rhythmSpelling: RhythmSpelling, at positions: [Double]) {
-            prepare(rhythmSpelling.map { $0.beamJunction }, at: positions)
+        public func prepare(_ beaming: Beaming, at positions: [Double]) {
+            prepare(beaming.map { $0 }, at: positions)
         }
 
         /// Add all of the nececessary components for the given `junctions` at the given
         /// `positions`.
-        public func prepare(_ junctions: [RhythmSpelling.BeamJunction], at positions: [Double]) {
-            precondition(junctions.count == positions.count)
-            zip(junctions, positions).forEach(handle)
+        public func prepare(_ verticals: [Beaming.Point.Vertical], at positions: [Double]) {
+            precondition(verticals.count == positions.count)
+            zip(verticals, positions).forEach(handle)
         }
 
-        private func handle(_ junction: RhythmSpelling.BeamJunction, at position: Double) {
-            junction.states.forEach { level, state in
-                switch state {
+        private func handle(_ vertical: Beaming.Point.Vertical, at position: Double) {
+            vertical.points.enumerated().forEach { (level, point) in
+                switch point {
                 case .start:
                     startBeam(at: position, on: level)
                 case .stop:

@@ -6,7 +6,7 @@
 //
 //
 
-import StructureWrapping
+import DataStructures
 import Rendering
 
 public struct PlotViewCollection {

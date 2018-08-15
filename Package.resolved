@@ -6,7 +6,7 @@
         "repositoryURL": "https://github.com/dn-m/Graphics",
         "state": {
           "branch": "master",
-          "revision": "8d810deb42610250f42ebb7b8c1473e8a22736ee",
+          "revision": "74a7bd0cc0fe891eaf99a7b057358688dd258ac6",
           "version": null
         }
       },
@@ -14,27 +14,45 @@
         "package": "Math",
         "repositoryURL": "https://github.com/dn-m/Math",
         "state": {
-          "branch": "master",
-          "revision": "d1284e043377c0b924cba2ffa2ab0b9aa9dd246f",
-          "version": null
+          "branch": null,
+          "revision": "7617c38637cb8d5f2af3875ca7e5bc463b080d43",
+          "version": "0.3.0"
         }
       },
       {
         "package": "Music",
         "repositoryURL": "https://github.com/dn-m/Music",
         "state": {
-          "branch": "master",
-          "revision": "27f653861d84b6fa881a6346e8dcdfce7fe83911",
-          "version": null
+          "branch": null,
+          "revision": "55545a309ed635899c4204b869dde1b7fe7c1ae9",
+          "version": "0.4.0"
         }
       },
       {
         "package": "NotationModel",
         "repositoryURL": "https://github.com/dn-m/NotationModel",
         "state": {
-          "branch": "master",
-          "revision": "85173280373fbfb8b1687e4f1b0ba2e2a9181673",
-          "version": null
+          "branch": null,
+          "revision": "066bf5962bea3cc45568f9aad565d806e6fd9b55",
+          "version": "0.3.0"
+        }
+      },
+      {
+        "package": "PerformanceTesting",
+        "repositoryURL": "https://github.com/dn-m/PerformanceTesting",
+        "state": {
+          "branch": null,
+          "revision": "d48417c837b1a029dd9567dfa7b5ee3cfa9a0ec7",
+          "version": "0.3.0"
+        }
+      },
+      {
+        "package": "Structure",
+        "repositoryURL": "https://github.com/dn-m/Structure",
+        "state": {
+          "branch": null,
+          "revision": "ec0c57807165e1d66a7dc74fb1c768b22ccfd209",
+          "version": "0.9.0"
         }
       },
       {
@@ -42,17 +60,8 @@
         "repositoryURL": "https://github.com/drmohundro/SWXMLHash",
         "state": {
           "branch": null,
-          "revision": "3959d0799b045b423680d3c99c8359b8dfe288a5",
-          "version": "4.1.1"
-        }
-      },
-      {
-        "package": "Structure",
-        "repositoryURL": "https://github.com/dn-m/Structure",
-        "state": {
-          "branch": "master",
-          "revision": "81d894ed931864734c73f9507e5d2f147b40a363",
-          "version": null
+          "revision": "24698592b581aef2bdbfc86ce18695708038c624",
+          "version": "4.7.1"
         }
       }
     ]

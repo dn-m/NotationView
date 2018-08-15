@@ -6,7 +6,7 @@
 //
 //
 
-import StructureWrapping
+import DataStructures
 
 /// Collection of `LinesSegment` values, which indicate the start and stop points for
 /// the structural lines in a `Plot`.
