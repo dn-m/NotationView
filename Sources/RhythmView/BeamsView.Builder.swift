@@ -14,7 +14,6 @@ import Rendering
 
 extension BeamsView {
 
-    // FIXME: Remove Generic requirement
     public final class Builder {
 
         /// Configuration of `BeamsView`.
