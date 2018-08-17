@@ -16,21 +16,27 @@ import StaffModel
 import StaffView
 import GraphicsTesting
 
-#warning("Reinstate ClefTests")
-//class ClefTests: GraphicsTestCase {
-//
-//    func testClefs() {
-//
-//        let position = VerticalAxisPosition(x: 0, plotTop: 0, plotBottom: 40)
-//        let configuration = ClefConfiguration(foregroundColor: .black, maskColor: .white)
-//
-//        let clefs: [Clef.Kind] = [.treble, .bass, .alto, .tenor]
-//        for clef in clefs {
-//            let view = StaffClefView.makeClef(clef, at: position, with: configuration)
-//            let layer = CALayer(view.rendered)
-//            layer.frame = CGRect(x: 0, y: 0, width: 0, height: 40)
-//            layer.showTestBorder()
-//            render(layer, name: "clef_\(clef)")
-//        }
-//    }
-//}
+class ClefTests: XCTestCase {
+
+    override func setUp() {
+        createArtifactsDirectory(for: "\(type(of: self))")
+    }
+
+    override func tearDown() {
+        openArtifactsDirectory()
+    }
+
+    func testClefsRender() {
+        let position = VerticalAxisPosition(x: 0, plotTop: 0, plotBottom: 40)
+        let configuration = ClefConfiguration(foregroundColor: .black, maskColor: .white)
+
+        let clefs: [Clef.Kind] = [.treble, .bass, .alto, .tenor]
+        for clef in clefs {
+            let view = StaffClefView.makeClef(clef, at: position, with: configuration)
+            render(view.rendered,
+                fileName: "\(#function)_\(clef)",
+                testCaseName: "\(type(of: self))"
+            )
+        }
+    }
+}
