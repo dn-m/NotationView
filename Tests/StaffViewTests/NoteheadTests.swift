@@ -7,16 +7,27 @@
 //
 
 import XCTest
+import GraphicsTesting
 import Geometry
 import Path
 import Rendering
 import StaffView
 
 class NoteheadTests: XCTestCase {
-    
+
+    override func setUp() {
+        createArtifactsDirectory(for: "\(type(of: self))")
+    }
+
+    override func tearDown() {
+        openArtifactsDirectory()
+    }
+
     func testNotehead() {
-        //let position = Point()
-        
-        //let notehead = NoteheadView(position: position, size: NoteheadView.Size(staffSlotHeight: 12))
+        let notehead = NoteheadView(
+            position: .zero,
+            size: NoteheadView.Size(staffSlotHeight: 40, scale: 1)
+        )
+        render(notehead.rendered, fileName: #function, testCaseName: "\(type(of: self))")
     }
 }
