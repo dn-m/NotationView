@@ -129,7 +129,7 @@ class BeamsViewTests: XCTestCase {
     }
 
     func testBeamsWithRhythm() {
-        let rhythm = Rhythm<()>(1/>4, [(4,event(())),(2,event(())),(1,event(())),(2,event(()))])
+        let rhythm = Rhythm(1/>4, [(4,event(())),(2,event(())),(1,event(())),(2,event(()))])
         let beaming = DefaultBeamer.beaming(for: rhythm)
         let configuration = BeamsView.Configuration(slope: -0.125)
         let beamsView = BeamsView(
