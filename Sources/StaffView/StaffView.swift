@@ -53,7 +53,8 @@ extension StaffView {
     public var rendered: StyledPath.Composite {
         let structure: [Renderable] = [lines,clef]
         let renderables: [Renderable] = structure + points
-        return .branch(Group("StaffView"), renderables.map { $0.rendered })
+        return StyledPath.Composite.branch(Group("StaffView"), renderables.map { $0.rendered })
+            .resizedToFitContents
     }
 }
 
