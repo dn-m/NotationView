@@ -100,6 +100,33 @@ class BeamsViewTests: XCTestCase {
         )
         render(beamsView.rendered, fileName: #function, testCaseName: "\(type(of: self))")
     }
+
+    func testBeamsAndBeamletsWithBeaming() {
+        let beaming = Beaming([.init(start: 2, beamlets: 2), .init(stop: 2)])
+        let configuration = BeamsView.Configuration(slope: 0.125)
+        let beamsView = BeamsView(
+            beaming: beaming,
+            positions: [0, 100],
+            configuration: configuration
+        )
+        render(beamsView.rendered, fileName: #function, testCaseName: "\(type(of: self))")
+    }
+
+    func testBeamsAndBeamletsWithBeaming2() {
+        let beaming = Beaming([
+            .init(start: 2, beamlets: 2),
+            .init(maintain: 1, stop: 1),
+            .init(maintain: 1, start: 2, beamlets: 3),
+            .init(stop: 3)
+        ])
+        let configuration = BeamsView.Configuration(slope: -0.125)
+        let beamsView = BeamsView(
+            beaming: beaming,
+            positions: [0,50,100,150],
+            configuration: configuration
+        )
+        render(beamsView.rendered, fileName: #function, testCaseName: "\(type(of: self))")
+    }
 }
 
 //class BeamsViewTests: GraphicsTestCase {
