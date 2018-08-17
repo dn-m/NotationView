@@ -85,8 +85,8 @@ extension StaffView.PointView: Renderable {
 
     /// Subcomponents to be rendered.
     public var rendered: StyledPath.Composite {
-        let noteheads: [Renderable] = pitches.flatMap { $0.notehead }
-        let accidentals: [Renderable] = pitches.flatMap { $0.accidental }
+        let noteheads: [Renderable] = pitches.compactMap { $0.notehead }
+        let accidentals: [Renderable] = pitches.compactMap { $0.accidental }
         let renderables = noteheads + accidentals
         return .branch(Group("StaffView.PointView"), renderables.map { $0.rendered })
     }

@@ -8,7 +8,8 @@ let package = Package(
     products: [
         .library(name: "PlotView", targets: ["PlotView"]),
         .library(name: "StaffView", targets: ["StaffView"]),
-        .library(name: "RhythmView", targets: ["RhythmView"])
+        .library(name: "RhythmView", targets: ["RhythmView"]),
+        .library(name: "ScoreView", targets: ["ScoreView"])
     ],
     dependencies: [
         .package(url: "https://github.com/dn-m/Graphics", from: "0.1.0"),
@@ -20,10 +21,20 @@ let package = Package(
         .target(name: "PlotView", dependencies: ["PlotModel", "Rendering"]),
         .target(name: "StaffView", dependencies: ["PlotView", "StaffModel"]),
         .target(name: "RhythmView", dependencies: ["Rendering", "SpelledRhythm"]),
+        .target(
+            name: "ScoreView",
+            dependencies: [
+                "Rendering",
+                "PlotView",
+                "StaffView",
+                "RhythmView"
+            ]
+        ),
 
         // Tests
         .testTarget(name: "PlotViewTests", dependencies: ["PlotView", "GraphicsTesting"]),
         .testTarget(name: "StaffViewTests", dependencies: ["StaffView"]),
-        .testTarget(name: "RhythmViewTests", dependencies: ["RhythmView", "GraphicsTesting"])
+        .testTarget(name: "RhythmViewTests", dependencies: ["RhythmView", "GraphicsTesting"]),
+        .testTarget(name: "ScoreViewTests", dependencies: ["ScoreView", "GraphicsTesting"])
     ]
 )
