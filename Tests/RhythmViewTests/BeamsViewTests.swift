@@ -66,6 +66,40 @@ class BeamsViewTests: XCTestCase {
         let beamsView = BeamsView(beams: [a,b], color: .black)
         render(beamsView.rendered, fileName: #function, testCaseName: "\(type(of: self))")
     }
+
+    func testBeamStraightWithBeaming() {
+        let beaming = Beaming([.init(start: 1), .init(stop: 1)])
+        let beamsView = BeamsView(beaming: beaming, positions: [0, 100])
+        render(beamsView.rendered, fileName: #function, testCaseName: "\(type(of: self))")
+    }
+
+    func testBeamsStraightWithBeaming() {
+        let beaming = Beaming([.init(start: 2), .init(stop: 2)])
+        let beamsView = BeamsView(beaming: beaming, positions: [0, 100])
+        render(beamsView.rendered, fileName: #function, testCaseName: "\(type(of: self))")
+    }
+
+    func testBeamsAngledDownWithBeaming() {
+        let beaming = Beaming([.init(start: 2), .init(stop: 2)])
+        let configuration = BeamsView.Configuration(slope: 0.25)
+        let beamsView = BeamsView(
+            beaming: beaming,
+            positions: [0, 100],
+            configuration: configuration
+        )
+        render(beamsView.rendered, fileName: #function, testCaseName: "\(type(of: self))")
+    }
+
+    func testBeamsAngledUpWithBeaming() {
+        let beaming = Beaming([.init(start: 2), .init(stop: 2)])
+        let configuration = BeamsView.Configuration(slope: -0.25)
+        let beamsView = BeamsView(
+            beaming: beaming,
+            positions: [0, 100],
+            configuration: configuration
+        )
+        render(beamsView.rendered, fileName: #function, testCaseName: "\(type(of: self))")
+    }
 }
 
 //class BeamsViewTests: GraphicsTestCase {

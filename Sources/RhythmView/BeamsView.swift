@@ -22,12 +22,12 @@ public struct BeamsView: Renderable {
         let color: Color
 
         public init(
-            orientation: Orientation,
-            slope: Double,
-            width: Double,
-            beamletLength: Double,
-            displacement: Double,
-            color: Color
+            orientation: Orientation = .stemsDown,
+            slope: Double = 0,
+            width: Double = 10,
+            beamletLength: Double = 16,
+            displacement: Double = 13,
+            color: Color = .black
         )
         {
             self.orientation = orientation
@@ -55,7 +55,7 @@ public struct BeamsView: Renderable {
         self.color = color
     }
 
-    public init(beaming: Beaming, positions: [Double], configuration: Configuration) {
+    public init(beaming: Beaming, positions: [Double], configuration: Configuration = .init()) {
         let builder = Builder(configuration: configuration)
         builder.prepare(beaming, at: positions)
         self = builder.build()
