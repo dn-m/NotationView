@@ -14,7 +14,32 @@ import StaffModel
 import StaffView
 import GraphicsTesting
 
-#warning("Reinstate StaffViewTests")
+class StaffViewTests: XCTestCase {
+
+    override func setUp() {
+        createArtifactsDirectory(for: "\(type(of: self))")
+    }
+
+    override func tearDown() {
+        openArtifactsDirectory()
+    }
+
+    func testStaffLinesAndClef() {
+        let clefs: [Clef.Kind] = [.treble, .bass, .alto, .tenor]
+        for clef in clefs {
+            let builder = StaffView.Builder(clef: Clef(clef), configuration: StaffConfiguration())
+            builder.startLines(at: 0)
+            builder.stopLines(at: 500)
+            let staffView = builder.build()
+            render(staffView.rendered,
+                fileName: "\(#function)_\(clef)",
+                testCaseName: "\(type(of: self))"
+            )
+        }
+    }
+}
+
+
 //class StaffViewTests: GraphicsTestCase {
 //
 //    func testBuilderAPI() {
