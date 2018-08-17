@@ -6,7 +6,7 @@
         "repositoryURL": "https://github.com/dn-m/Graphics",
         "state": {
           "branch": "master",
-          "revision": "74a7bd0cc0fe891eaf99a7b057358688dd258ac6",
+          "revision": "395edcf60a89b76229236cd991ea32a7cc7cd5ba",
           "version": null
         }
       },
@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/dn-m/Math",
         "state": {
           "branch": null,
-          "revision": "7617c38637cb8d5f2af3875ca7e5bc463b080d43",
-          "version": "0.3.0"
+          "revision": "044605330704860849ecebbe63d7c8854bc0c42e",
+          "version": "0.4.0"
         }
       },
       {

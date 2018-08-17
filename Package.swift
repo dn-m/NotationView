@@ -11,7 +11,7 @@ let package = Package(
         .library(name: "RhythmView", targets: ["RhythmView"])
     ],
     dependencies: [
-        .package(url: "https://github.com/dn-m/Graphics", .branch("master")),
+        .package(url: "https://github.com/dn-m/Graphics", from: "0.1.0"),
         .package(url: "https://github.com/dn-m/NotationModel", from: "0.3.0")
     ],
     targets: [
