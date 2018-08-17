@@ -127,39 +127,16 @@ class BeamsViewTests: XCTestCase {
         )
         render(beamsView.rendered, fileName: #function, testCaseName: "\(type(of: self))")
     }
-}
 
-//class BeamsViewTests: GraphicsTestCase {
-//
-//    func testBeamsView() {
-//
-//        let durationTree = 4/>8 * [1,3,4,2,2,1]
-//        let contexts = durationTree.leaves.map { _ in MetricalContext<Int>.instance(.event(0)) }
-//
-//        let rhythm = Rhythm(durationTree, contexts)
-//        let spelling = RhythmSpelling(rhythm)
-//        let spelledRhythm = SpelledRhythm(rhythm: rhythm, spelling: spelling)
-//
-//        let beatWidth: Double = 480
-//        let positions = spelledRhythm.map { offset,_,_ in beatWidth * offset }
-//
-//        let configuration = BeamsView.Configuration(
-//            orientation: .stemsDown,
-//            slope: 0,
-//            width: 4,
-//            beamletLength: 6,
-//            displacement: 6,
-//            color: .black
-//        )
-//
-//        let beamsView = BeamsView(
-//            rhythmSpelling: spelledRhythm.spelling,
-//            positions: positions,
-//            configuration: configuration
-//        )
-//
-//        let layer = CALayer(beamsView.rendered)
-//        layer.showTestBorder()
-//        render(layer, name: "beams_view")
-//    }
-//}
+    func testBeamsWithRhythm() {
+        let rhythm = Rhythm<()>(1/>4, [(4,event(())),(2,event(())),(1,event(())),(2,event(()))])
+        let beaming = DefaultBeamer.beaming(for: rhythm)
+        let configuration = BeamsView.Configuration(slope: -0.125)
+        let beamsView = BeamsView(
+            beaming: beaming,
+            positions: [0,200,300,350],
+            configuration: configuration
+        )
+        render(beamsView.rendered, fileName: #function, testCaseName: "\(type(of: self))")
+    }
+}
