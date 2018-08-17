@@ -16,8 +16,6 @@ import RhythmView
 import QuartzAdapter
 import GraphicsTesting
 
-#warning("Reinstate BeamsViewTests")
-
 class BeamsViewTests: XCTestCase {
 
     override func setUp() {
