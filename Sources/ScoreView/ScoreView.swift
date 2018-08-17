@@ -8,17 +8,23 @@
 
 import Rendering
 import RhythmView
+import StaffView
 
 public struct ScoreView: Renderable {
 
-    let beamsView: BeamsView
+    let beams: BeamsView
+    let staff: StaffView
 
-    public init(_ beamsView: BeamsView) {
-        self.beamsView = beamsView
+    public init(beams: BeamsView, staff: StaffView ) {
+        self.beams = beams
+        self.staff = staff
     }
 
     public var rendered: StyledPath.Composite {
-        let composite: StyledPath.Composite = .branch(Group("Score"), [beamsView.rendered])
+        let renderables: [Renderable] = [beams,staff]
+        let composite: StyledPath.Composite = .branch(Group("Score"),
+            renderables.map { $0.rendered }
+        )
         return composite.resizedToFitContents
     }
 }
