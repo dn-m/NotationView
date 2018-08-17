@@ -50,7 +50,7 @@ extension StaffView {
     
     // MARK: - Rendering
 
-    public var rendered: Composite {
+    public var rendered: StyledPath.Composite {
         let structure: [Renderable] = [lines,clef]
         let renderables: [Renderable] = structure + points
         return .branch(Group("StaffView"), renderables.map { $0.rendered })
@@ -83,7 +83,7 @@ extension StaffView.PointView: Renderable {
     // MARK: - CompositeRenderable
 
     /// Subcomponents to be rendered.
-    public var rendered: Composite {
+    public var rendered: StyledPath.Composite {
         let noteheads: [Renderable] = pitches.flatMap { $0.notehead }
         let accidentals: [Renderable] = pitches.flatMap { $0.accidental }
         let renderables = noteheads + accidentals

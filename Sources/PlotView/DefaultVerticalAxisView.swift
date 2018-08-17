@@ -52,17 +52,17 @@ extension DefaultVerticalAxisView: Renderable {
     
     // MARK: - Renderable
     
-    public var line: RenderedPath {
+    public var line: StyledPath {
         let path = Path.line(from: Point(x: 0, y: 0), to: Point(x: 0, y: height))
         let style = Styling(stroke: Stroke(width: lineWidth, color: configuration.color))
-        return RenderedPath(frame: frame, path: path, styling: style)
+        return StyledPath(frame: frame, path: path, styling: style)
     }
     
     public var frame: Rectangle {
         return Rectangle(x: 0, y: -extenderLength, width: 0, height: height)
     }
     
-    public var rendered: Composite {
+    public var rendered: StyledPath.Composite {
         return .leaf(.path(line))
     }
 }

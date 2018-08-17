@@ -43,7 +43,7 @@ public struct RhythmView: Renderable {
         }
     }
 
-    public var rendered: Composite {
+    public var rendered: StyledPath.Composite {
         return .branch(Group("RhythmView"), [beamsView.rendered])
     }
 

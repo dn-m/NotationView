@@ -22,7 +22,7 @@ import GraphicsTesting
 //        let outside = Path.square(center: Point(), width: 10)
 //        let inside = Path.square(center: Point(), width: 8)
 //        let path = outside + inside
-//        let styledPath = RenderedPath(path: path, styling: Styling(fill: Fill(rule: .evenOdd)))
+//        let styledPath = StyledPath(path: path, styling: Styling(fill: Fill(rule: .evenOdd)))
 //        let layer = CAShapeLayer(styledPath)
 //        render(layer, name: "hole")
 //    }

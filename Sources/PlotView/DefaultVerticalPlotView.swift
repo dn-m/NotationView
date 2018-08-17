@@ -46,11 +46,11 @@ public struct DefaultVerticalPointView {
 
 extension DefaultVerticalPointView: Renderable {
     
-    public var rendered: Composite {
+    public var rendered: StyledPath.Composite {
         
         // TODO: Add configuration
         let path = Path.circle(center: position, radius: 3)
-        let styledPath = RenderedPath(path: path)
+        let styledPath = StyledPath(path: path)
         return .leaf(.path(styledPath))
     }
 }
@@ -87,10 +87,10 @@ public struct DefaultVerticalPlotView: VerticalPlotView {
 
 extension DefaultVerticalPlotView: Renderable {
 
-    public var rendered: Composite {
+    public var rendered: StyledPath.Composite {
         let group = Group("DefaultVerticalPlotView")
         let components: [Renderable] = ([lines, axis] + (points as [Renderable]))
-        let trees: [Composite] = components.lazy.map { $0.rendered }
-        return Composite.branch(group, trees)
+        let trees: [StyledPath.Composite] = components.lazy.map { $0.rendered }
+        return StyledPath.Composite.branch(group, trees)
     }
 }

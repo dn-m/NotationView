@@ -18,7 +18,7 @@ public final class BassClef: StaffClefView {
         return 2 * staffSlotHeight + extenderLength
     }
     
-    public override var ornament: RenderedPath {
+    public override var ornament: StyledPath {
 
         let path = [-1,1].map { sign in
             Path.circle(
@@ -31,6 +31,6 @@ public final class BassClef: StaffClefView {
         }.sum
         
         let styling = Styling(fill: Fill(color: configuration.foregroundColor))
-        return RenderedPath(frame: frame, path: path, styling: styling)
+        return StyledPath(frame: frame, path: path, styling: styling)
     }
 }

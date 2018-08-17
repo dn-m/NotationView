@@ -18,7 +18,7 @@ public struct DefaultVerticalPlotLinesCollection: Renderable {
         public let lineWidth: Double
     }
     
-    public var rendered: Composite {
+    public var rendered: StyledPath.Composite {
         return .leaf(.path(boundaryLines))
     }
     
@@ -30,7 +30,7 @@ public struct DefaultVerticalPlotLinesCollection: Renderable {
         self.configuration = configuration
     }
     
-    private var boundaryLines: RenderedPath {
+    private var boundaryLines: StyledPath {
         
         let path = Path(
             lineSegments.flatMap { segment in
@@ -50,6 +50,6 @@ public struct DefaultVerticalPlotLinesCollection: Renderable {
             stroke: Stroke(width: configuration.lineWidth, color: configuration.linesColor)
         )
         
-        return RenderedPath(frame: .zero, path: path, styling: styling)
+        return StyledPath(frame: .zero, path: path, styling: styling)
     }
 }

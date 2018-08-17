@@ -39,11 +39,11 @@ public struct BeamsView: Renderable {
         }
     }
 
-    public var rendered: Composite {
+    public var rendered: StyledPath.Composite {
         let path = beams.map { $0.path }.sum
         let styling = Styling(fill: Fill(color: color))
-        let styledPath = RenderedPath(path: path, styling: styling)
-        let leaf = Composite.leaf(.path(styledPath))
+        let styledPath = StyledPath(path: path, styling: styling)
+        let leaf = StyledPath.Composite.leaf(.path(styledPath))
         return leaf.resizedToFitContents
     }
 

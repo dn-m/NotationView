@@ -29,7 +29,7 @@ public protocol ClefView: VerticalAxisView {
     var lineWidth: Double { get }
     var position: VerticalAxisPosition { get }
     var configuration: ClefConfiguration { get }
-    var components: [RenderedPath] { get }
+    var components: [StyledPath] { get }
 }
 
 // TODO: Move to dn-m/PlotView
@@ -56,17 +56,17 @@ extension ClefView {
     
     // MARK: - Renderable
     
-    public var line: RenderedPath {
+    public var line: StyledPath {
         let path = Path.line(from: Point(x: 0, y: 0), to: Point(x: 0, y: height))
         let style = Styling(stroke: Stroke(width: lineWidth, color: configuration.foregroundColor))
-        return RenderedPath(frame: frame, path: path, styling: style)
+        return StyledPath(frame: frame, path: path, styling: style)
     }
     
     public var frame: Rectangle {
         return Rectangle(x: 0, y: -extenderLength, width: 0, height: height)
     }
     
-    public var rendered: Composite {
+    public var rendered: StyledPath.Composite {
         return .branch(Group("clef"), components.map { .leaf(.path($0)) })
     }
 }
@@ -103,7 +103,7 @@ public class StaffClefView: ClefView {
         return 0
     }
     
-    public var ornament: RenderedPath? {
+    public var ornament: StyledPath? {
         return nil
     }
     
@@ -119,7 +119,7 @@ extension StaffClefView {
         return clefHeight / 8
     }
     
-    public var components: [RenderedPath] {
+    public var components: [StyledPath] {
         return [line] + ornament
     }
 }

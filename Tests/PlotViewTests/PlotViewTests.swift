@@ -43,7 +43,7 @@ class PlotViewTests: XCTestCase {
     struct PViewConfiguration { }
     
     struct PView: PlotView {
-        let rendered: Composite
+        let rendered: StyledPath.Composite
         let model: PModel
         let configuration: PViewConfiguration
         let concreteHorizontalPosition: (Double) -> Double = { x in x }

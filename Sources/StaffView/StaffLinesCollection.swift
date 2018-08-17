@@ -17,7 +17,7 @@ import PlotView
 ///
 public struct StaffLinesCollection: Renderable {
     
-    public var rendered: Composite {
+    public var rendered: StyledPath.Composite {
         
         let group = Group("lines")
         
@@ -26,7 +26,7 @@ public struct StaffLinesCollection: Renderable {
             ledgerLines(configuration: configuration)
         ]
 
-        let branch: Composite = .branch(group, paths.map { .leaf(.path($0)) })
+        let branch: StyledPath.Composite = .branch(group, paths.map { .leaf(.path($0)) })
         return branch.resizedToFitContents
     }
     
@@ -47,7 +47,7 @@ public struct StaffLinesCollection: Renderable {
     
     // FIXME: Passing Configuration for no reason
     // - Either accept statefulness, or break out to pure functions
-    private func staffLines(configuration: StaffConfiguration) -> RenderedPath {
+    private func staffLines(configuration: StaffConfiguration) -> StyledPath {
         
         let staffSlotHeight = configuration.staffSlotHeight
         
@@ -69,12 +69,12 @@ public struct StaffLinesCollection: Renderable {
             stroke: Stroke(width: configuration.lineWidth, color: configuration.linesColor)
         )
         
-        return RenderedPath(frame: .zero, path: path, styling: styling).resizedToFitContents
+        return StyledPath(frame: .zero, path: path, styling: styling).resizedToFitContents
     }
     
     // FIXME: Passing Configuration for no reason
     // - Either accept statefulness, or break out to pure functions
-    private func ledgerLines(configuration: StaffConfiguration) -> RenderedPath {
+    private func ledgerLines(configuration: StaffConfiguration) -> StyledPath {
         
         let staffSlotHeight = configuration.staffSlotHeight
         let length = configuration.ledgerLineLength
@@ -106,6 +106,6 @@ public struct StaffLinesCollection: Renderable {
             )
         )
         
-        return RenderedPath(frame: .zero, path: path, styling: styling).resizedToFitContents
+        return StyledPath(frame: .zero, path: path, styling: styling).resizedToFitContents
     }
 }
