@@ -7,7 +7,6 @@
 //
 
 import StaffModel
-import QuartzCore
 import Geometry
 import Path
 import Rendering

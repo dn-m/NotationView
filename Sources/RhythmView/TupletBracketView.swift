@@ -6,10 +6,10 @@
 //
 //
 
-import QuartzCore
 import Rendering
 
-public struct TupletBracketView: Renderer {
+#warning("Implement TupletBracketView")
+public struct TupletBracketView {
     
     public struct Configuration {
         let orientation: Orientation
@@ -19,11 +19,6 @@ public struct TupletBracketView: Renderer {
     }
     
     public init() {
-        
-    }
-    
-    public func render(in context: CALayer, with configuration: Configuration) {
-        
         
     }
 }

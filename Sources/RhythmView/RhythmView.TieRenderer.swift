@@ -11,18 +11,14 @@ import SpelledRhythm
 import Geometry
 import Path
 import Rendering
-import QuartzCore
 
+#warning("TODO: Implement TieRenderer")
 extension RhythmView {
     
-    class TieRenderer: Renderer {
+    class TieRenderer {
         
         struct Configuration {
             
-        }
-        
-        func render(in context: CALayer, with configuration: Configuration) {
-            // TODO
         }
     }
 }

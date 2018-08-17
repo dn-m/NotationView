@@ -6,7 +6,6 @@
 //
 //
 
-import QuartzCore
 import Duration
 import SpelledRhythm
 import Geometry
