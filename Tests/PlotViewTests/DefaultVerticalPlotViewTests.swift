@@ -6,7 +6,6 @@
 //
 //
 
-import QuartzCore
 import GraphicsTesting
 import Geometry
 import Path

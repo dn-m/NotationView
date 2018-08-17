@@ -9,7 +9,6 @@
 import Duration
 import SpelledRhythm
 import Rendering
-import QuartzCore
 
 /// View composed of `BeamsView`.
 ///

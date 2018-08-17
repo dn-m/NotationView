@@ -9,16 +9,12 @@
 import Geometry
 import Path
 import Rendering
-import QuartzCore
 
-public struct SubdivisionView: Renderer {
+#warning("Implement SubdivisionView")
+public struct SubdivisionView {
     
     public struct Configuration {
         let orientation: Orientation
         let frame: Rectangle
-    }
-    
-    public func render(in context: CALayer, with configuration: Configuration) {
-        // stem
     }
 }
