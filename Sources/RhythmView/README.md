@@ -6,8 +6,6 @@ The `RhythmView` module defines structures for graphically representing rhythmic
 
 A `BeamsView` contains the information necessary to render the beams and beamlets for a given rhythm.
 
-They may look something like this:
-
 ![BeamsView Example](Documentation/beams_example.png "BeamsView example")
 
 ### BeamsView.Configuration
@@ -23,10 +21,20 @@ The `BeamsView.Configuration` structure allows you to define the graphical attri
 
 ### Beam
 
-The `Beam` is the elemental unit of a `BeamsView`, and it is merely a parallelogramical path.
+The `Beam` is the elemental unit of a `BeamsView`, and it is merely a parallelogramical `Path`.
 
 ## RhythmView
 
+**WORK IN PROGRESS**
+
 ### RhythmView.Configuration
 
-### Tuplet
+**WORK IN PROGRESS**
+
+### TupletBracketView
+
+**WORK IN PROGRESS**
+
+### TupletBracketView.Configuration
+
+**WORK IN PROGRESS**
