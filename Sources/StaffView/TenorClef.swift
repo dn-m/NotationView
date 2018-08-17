@@ -18,7 +18,7 @@ public final class TenorClef: StaffClefView {
         return 2 * staffSlotHeight + extenderLength
     }
     
-    public override var ornament: RenderedPath {
+    public override var ornament: StyledPath {
         
         let width = staffSlotHeight
         let position = Point(x: 0, y: ornamentAltitude)
@@ -31,6 +31,6 @@ public final class TenorClef: StaffClefView {
             stroke: Stroke(width: lineWidth, color: configuration.foregroundColor)
         )
         
-        return RenderedPath(frame: frame, path: path, styling: styling)
+        return StyledPath(frame: frame, path: path, styling: styling)
     }
 }

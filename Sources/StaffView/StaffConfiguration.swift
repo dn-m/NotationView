@@ -33,10 +33,10 @@ public struct StaffConfiguration {
     
     public init(
         staffSlotHeight: StaffSlotHeight = 12,
-        noteheadColor: Color = Color(gray: 0.25, alpha: 1),
-        linesColor: Color = Color(gray: 0.5, alpha: 1),
-        clefColor: Color = Color(gray: 0, alpha: 1),
-        maskColor: Color = Color(gray: 1, alpha: 1)
+        noteheadColor: Color = Color(white: 0.25, alpha: 1),
+        linesColor: Color = Color(white: 0.5, alpha: 1),
+        clefColor: Color = Color(white: 0, alpha: 1),
+        maskColor: Color = Color(white: 1, alpha: 1)
     )
     {
         self.staffSlotHeight = staffSlotHeight

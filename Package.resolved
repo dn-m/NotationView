@@ -5,9 +5,9 @@
         "package": "Graphics",
         "repositoryURL": "https://github.com/dn-m/Graphics",
         "state": {
-          "branch": "master",
+          "branch": null,
           "revision": "395edcf60a89b76229236cd991ea32a7cc7cd5ba",
-          "version": null
+          "version": "0.1.0"
         }
       },
       {

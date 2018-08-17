@@ -18,7 +18,7 @@ public final class TrebleClef: StaffClefView {
         return 6 * staffSlotHeight + extenderLength
     }
     
-    public override var ornament: RenderedPath {
+    public override var ornament: StyledPath {
         
         let path = Path.circle(
             center: Point(x: 0, y: ornamentAltitude),
@@ -30,6 +30,6 @@ public final class TrebleClef: StaffClefView {
             stroke: Stroke(width: lineWidth, color: configuration.foregroundColor)
         )
         
-        return RenderedPath(frame: frame, path: path, styling: styling)
+        return StyledPath(frame: frame, path: path, styling: styling)
     }
 }
