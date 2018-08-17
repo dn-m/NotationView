@@ -6,6 +6,19 @@
 //
 //
 
-public struct ScoreView {
-    #warning("TODO: Implement ScoreView")
+import Rendering
+import RhythmView
+
+public struct ScoreView: Renderable {
+
+    let beamsView: BeamsView
+
+    public init(_ beamsView: BeamsView) {
+        self.beamsView = beamsView
+    }
+
+    public var rendered: StyledPath.Composite {
+        let composite: StyledPath.Composite = .branch(Group("Score"), [beamsView.rendered])
+        return composite.resizedToFitContents
+    }
 }
