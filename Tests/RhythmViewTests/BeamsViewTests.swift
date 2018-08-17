@@ -17,6 +17,57 @@ import QuartzAdapter
 import GraphicsTesting
 
 #warning("Reinstate BeamsViewTests")
+
+class BeamsViewTests: XCTestCase {
+
+    override func setUp() {
+        createArtifactsDirectory(for: "\(type(of: self))")
+    }
+
+    override func tearDown() {
+        openArtifactsDirectory()
+    }
+
+    func testBeamStraight() {
+        let beam = Beam(start: Point(x: 20, y: 20), end: Point(x: 100, y: 20), width: 10)
+        let beamsView = BeamsView(beams: [beam], color: .black)
+        render(beamsView.rendered, fileName: #function, testCaseName: "\(type(of: self))")
+    }
+
+    func testBeamAngledDown() {
+        let beam = Beam(start: Point(x: 20, y: 20), end: Point(x: 100, y: 30), width: 10)
+        let beamsView = BeamsView(beams: [beam], color: .black)
+        render(beamsView.rendered, fileName: #function, testCaseName: "\(type(of: self))")
+    }
+
+    func testBeamAngledUp() {
+        let beam = Beam(start: Point(x: 20, y: 20), end: Point(x: 100, y: 10), width: 10)
+        let beamsView = BeamsView(beams: [beam], color: .black)
+        render(beamsView.rendered, fileName: #function, testCaseName: "\(type(of: self))")
+    }
+
+    func testBeamsStraight() {
+        let a = Beam(start: Point(x: 20, y: 20), end: Point(x: 100, y: 20), width: 10)
+        let b = Beam(start: Point(x: 20, y: 33), end: Point(x: 100, y: 33), width: 10)
+        let beamsView = BeamsView(beams: [a,b], color: .black)
+        render(beamsView.rendered, fileName: #function, testCaseName: "\(type(of: self))")
+    }
+
+    func testBeamsAngledDown() {
+        let a = Beam(start: Point(x: 20, y: 20), end: Point(x: 100, y: 30), width: 10)
+        let b = Beam(start: Point(x: 20, y: 33), end: Point(x: 100, y: 43), width: 10)
+        let beamsView = BeamsView(beams: [a,b], color: .black)
+        render(beamsView.rendered, fileName: #function, testCaseName: "\(type(of: self))")
+    }
+
+    func testBeamsAngledUp() {
+        let a = Beam(start: Point(x: 20, y: 20), end: Point(x: 100, y: 10), width: 10)
+        let b = Beam(start: Point(x: 20, y: 33), end: Point(x: 100, y: 23), width: 10)
+        let beamsView = BeamsView(beams: [a,b], color: .black)
+        render(beamsView.rendered, fileName: #function, testCaseName: "\(type(of: self))")
+    }
+}
+
 //class BeamsViewTests: GraphicsTestCase {
 //
 //    func testBeamsView() {
