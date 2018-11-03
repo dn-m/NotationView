@@ -12,6 +12,8 @@ import StaffModel
 import Geometry
 import Path
 import Rendering
+import Pitch
+import SpelledPitch
 import StaffView
 import GraphicsTesting
 
@@ -26,7 +28,7 @@ class AccidentalTests: XCTestCase {
     }
 
     func testAccidentalsRender() {
-        let accidentals: [Accidental] = [.natural, .sharp, .flat]
+        let accidentals: [Pitch.Spelling.Modifier] = [.natural, .sharp, .flat]
         for accidental in accidentals {
             let view = AccidentalView.makeAccidental(accidental,
                 at: .zero,
