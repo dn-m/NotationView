@@ -20,7 +20,7 @@ public final class BassClef: StaffClefView {
     
     public override var ornament: StyledPath {
 
-        let path = [-1,1].map { sign in
+        let path: Path = [-1,1].map { sign in
             Path.circle(
                 center: Point(
                     x: 0.75 * staffSlotHeight,

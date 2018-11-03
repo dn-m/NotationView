@@ -15,8 +15,8 @@
         "repositoryURL": "https://github.com/dn-m/Math",
         "state": {
           "branch": null,
-          "revision": "044605330704860849ecebbe63d7c8854bc0c42e",
-          "version": "0.4.0"
+          "revision": "075ebb5a934251ed7acbe4feace925ed7e322d0f",
+          "version": "0.6.0"
         }
       },
       {
@@ -24,8 +24,8 @@
         "repositoryURL": "https://github.com/dn-m/Music",
         "state": {
           "branch": null,
-          "revision": "55545a309ed635899c4204b869dde1b7fe7c1ae9",
-          "version": "0.4.0"
+          "revision": "7033ba5d4fd00e799a92f57b4c410319a6e53114",
+          "version": "0.10.0"
         }
       },
       {
@@ -33,8 +33,8 @@
         "repositoryURL": "https://github.com/dn-m/NotationModel",
         "state": {
           "branch": null,
-          "revision": "066bf5962bea3cc45568f9aad565d806e6fd9b55",
-          "version": "0.3.0"
+          "revision": "ce6cd417a0965ea31eb0cff512a8ad09bc6030f5",
+          "version": "0.6.0"
         }
       },
       {
@@ -51,8 +51,8 @@
         "repositoryURL": "https://github.com/dn-m/Structure",
         "state": {
           "branch": null,
-          "revision": "ec0c57807165e1d66a7dc74fb1c768b22ccfd209",
-          "version": "0.9.0"
+          "revision": "cc4833213bf953fb0a71a98f446be740021cee08",
+          "version": "0.19.3"
         }
       },
       {
@@ -60,8 +60,8 @@
         "repositoryURL": "https://github.com/drmohundro/SWXMLHash",
         "state": {
           "branch": null,
-          "revision": "24698592b581aef2bdbfc86ce18695708038c624",
-          "version": "4.7.1"
+          "revision": "b130217d81833cecd7ddf78b76d60200f1070d98",
+          "version": "4.7.4"
         }
       }
     ]

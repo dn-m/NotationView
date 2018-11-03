@@ -9,6 +9,8 @@
 import Geometry
 import Path
 import Rendering
+import Pitch
+import SpelledPitch
 import StaffModel
 
 public class AccidentalView: Renderable {
@@ -106,7 +108,7 @@ public class AccidentalView: Renderable {
 extension AccidentalView {
     
     public static func makeAccidental(
-        _ kind: Accidental,
+        _ kind: Pitch.Spelling.Modifier,
         at position: Point,
         size: StaffItemSize,
         color: Color
@@ -117,8 +119,7 @@ extension AccidentalView {
             case .natural: return Natural.self
             case .sharp: return Sharp.self
             case .flat: return Flat.self
-            default:
-                fatalError()
+            default: fatalError()
             }
         }
         return type.init(position: position, size: size, color: color)
@@ -128,18 +129,12 @@ extension AccidentalView {
 extension AccidentalView {
     
     public static func makeAccidental(
-        coarse: Double,
-        fine: Double,
+        modifier: Pitch.Spelling.Modifier,
         at position: Point,
         size: StaffItemSize,
         color: Color
     ) -> AccidentalView?
     {
-        
-        guard let kind = Accidental(coarse: coarse, fine: fine) else {
-            return nil
-        }
-        
-        return makeAccidental(kind, at: position, size: size, color: color)
+        return makeAccidental(modifier, at: position, size: size, color: color)
     }
 }
