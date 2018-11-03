@@ -16,7 +16,7 @@ The `BeamsView.Configuration` structure allows you to define the graphical attri
 - `slope`: slope of the beams
 - `width`: width of the beams in pt
 - `beamletLength`: length of beamlets
-- `displacement`: displacement between center lines the beams
+- `displacement`: displacement between center lines of beams
 - `color`: color of the beams
 
 ### Beam
