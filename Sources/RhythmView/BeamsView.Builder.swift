@@ -46,7 +46,7 @@ extension BeamsView {
         /// Stop the beam at the given horizontal position, on the given `level`.
         public func stopBeam(at x: Double, on level: Int) {
             let start = self.start[level]!
-            beamSegments.safelyAppend((start,x), toArrayWith: level)
+            beamSegments[level, default: []].append((start,x))
             self.start[level] = nil
         }
 
@@ -57,7 +57,7 @@ extension BeamsView {
             direction: Beaming.BeamletDirection
         )
         {
-            beamlets.safelyAppend((x,direction), toArrayWith: level)
+            beamlets[level, default: []].append((x,direction))
         }
 
         /// Add all of the nececessary components for the given `rhythmSpelling` at the given
