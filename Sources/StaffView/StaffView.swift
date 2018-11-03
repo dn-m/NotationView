@@ -157,9 +157,8 @@ extension StaffView {
 
         /// Adds the amount ledger lines `above` and `below` at the given `position`.
         public func addLedgerLines(at position: Double, above: Int, below: Int) {
-            ledgerLines.ensureValue(for: position)
-            ledgerLines[position]![.below] = below
-            ledgerLines[position]![.above] = above
+            ledgerLines[position, default: [:]][.below] = below
+            ledgerLines[position, default: [:]][.above] = above
         }
 
         /// Creates a `StaffView` with the
