@@ -15,6 +15,7 @@ import StaffView
 
 class NoteheadTests: XCTestCase {
 
+    #if os(macOS)
     override func setUp() {
         createArtifactsDirectory(for: "\(type(of: self))")
     }
@@ -22,12 +23,15 @@ class NoteheadTests: XCTestCase {
     override func tearDown() {
         openArtifactsDirectory()
     }
+    #endif
 
     func testNotehead() {
         let notehead = NoteheadView(
             position: .zero,
             size: NoteheadView.Size(staffSlotHeight: 40, scale: 1)
         )
+        #if os(macOS)
         render(notehead.rendered, fileName: #function, testCaseName: "\(type(of: self))")
+        #endif
     }
 }
