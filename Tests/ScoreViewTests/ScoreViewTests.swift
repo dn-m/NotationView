@@ -19,6 +19,7 @@ import ScoreView
 
 class ScoreViewTests: XCTestCase {
 
+    #if os(macOS)
     override func setUp() {
         createArtifactsDirectory(for: "\(type(of: self))")
     }
@@ -26,6 +27,7 @@ class ScoreViewTests: XCTestCase {
     override func tearDown() {
         openArtifactsDirectory()
     }
+    #endif
 
     func testScoreView() {
 
@@ -52,6 +54,8 @@ class ScoreViewTests: XCTestCase {
 
         let score = ScoreView(beams: beamsView, staff: staffView)
 
+        #if os(macOS)
         render(score.rendered, fileName: #function, testCaseName: "\(type(of: self))")
+        #endif
     }
 }

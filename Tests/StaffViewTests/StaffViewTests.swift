@@ -16,6 +16,7 @@ import GraphicsTesting
 
 class StaffViewTests: XCTestCase {
 
+    #if os(macOS)
     override func setUp() {
         createArtifactsDirectory(for: "\(type(of: self))")
     }
@@ -23,6 +24,7 @@ class StaffViewTests: XCTestCase {
     override func tearDown() {
         openArtifactsDirectory()
     }
+    #endif
 
     func testStaffLinesAndClef() {
         let clefs: [Clef.Kind] = [.treble, .bass, .alto, .tenor]
@@ -31,10 +33,12 @@ class StaffViewTests: XCTestCase {
             builder.startLines(at: 0)
             builder.stopLines(at: 500)
             let staffView = builder.build()
+            #if os(macOS)
             render(staffView.rendered,
                 fileName: "\(#function)_\(clef)",
                 testCaseName: "\(type(of: self))"
             )
+            #endif
         }
     }
 
@@ -48,6 +52,8 @@ class StaffViewTests: XCTestCase {
         zip(positions, points).forEach { position, point in builder.add(point, at: position) }
         let model = builder.build()
         let view = StaffView(model: model)
+        #if os(macOS)
         render(view.rendered, fileName: #function, testCaseName: "\(type(of: self))")
+        #endif
     }
 }

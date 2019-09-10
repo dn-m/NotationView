@@ -18,6 +18,7 @@ import GraphicsTesting
 
 class ClefTests: XCTestCase {
 
+    #if os(macOS)
     override func setUp() {
         createArtifactsDirectory(for: "\(type(of: self))")
     }
@@ -25,6 +26,7 @@ class ClefTests: XCTestCase {
     override func tearDown() {
         openArtifactsDirectory()
     }
+    #endif
 
     func testClefsRender() {
         let position = VerticalAxisPosition(x: 0, plotTop: 0, plotBottom: 40)
@@ -33,10 +35,12 @@ class ClefTests: XCTestCase {
         let clefs: [Clef.Kind] = [.treble, .bass, .alto, .tenor]
         for clef in clefs {
             let view = StaffClefView.makeClef(clef, at: position, with: configuration)
+            #if os(macOS)
             render(view.rendered,
                 fileName: "\(#function)_\(clef)",
                 testCaseName: "\(type(of: self))"
             )
+            #endif
         }
     }
 }
