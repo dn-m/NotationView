@@ -6,6 +6,8 @@
 //
 //
 
+#if os(macOS)
+
 import XCTest
 import Duration
 import SpelledRhythm
@@ -138,3 +140,5 @@ class BeamsViewTests: XCTestCase {
         render(beamsView.rendered, fileName: #function, testCaseName: "\(type(of: self))")
     }
 }
+
+#endif
