@@ -6,8 +6,6 @@
 //
 //
 
-#if os(macOS)
-
 import XCTest
 import Duration
 import SpelledRhythm
@@ -15,11 +13,15 @@ import Geometry
 import Path
 import Rendering
 import RhythmView
-import QuartzAdapter
 import GraphicsTesting
+
+#if os(macOS)
+import QuartzAdapter
+#endif
 
 class BeamsViewTests: XCTestCase {
 
+    #if os(macOS)
     override func setUp() {
         createArtifactsDirectory(for: "\(type(of: self))")
     }
@@ -27,56 +29,73 @@ class BeamsViewTests: XCTestCase {
     override func tearDown() {
         openArtifactsDirectory()
     }
+    #endif
 
     func testBeamStraight() {
         let beam = Beam(start: Point(x: 20, y: 20), end: Point(x: 100, y: 20), width: 10)
         let beamsView = BeamsView(beams: [beam], color: .black)
+        #if os(macOS)
         render(beamsView.rendered, fileName: #function, testCaseName: "\(type(of: self))")
+        #endif
     }
 
     func testBeamAngledDown() {
         let beam = Beam(start: Point(x: 20, y: 20), end: Point(x: 100, y: 30), width: 10)
         let beamsView = BeamsView(beams: [beam], color: .black)
+        #if os(macOS)
         render(beamsView.rendered, fileName: #function, testCaseName: "\(type(of: self))")
+        #endif
     }
 
     func testBeamAngledUp() {
         let beam = Beam(start: Point(x: 20, y: 20), end: Point(x: 100, y: 10), width: 10)
         let beamsView = BeamsView(beams: [beam], color: .black)
+        #if os(macOS)
         render(beamsView.rendered, fileName: #function, testCaseName: "\(type(of: self))")
+        #endif
     }
 
     func testBeamsStraight() {
         let a = Beam(start: Point(x: 20, y: 20), end: Point(x: 100, y: 20), width: 10)
         let b = Beam(start: Point(x: 20, y: 33), end: Point(x: 100, y: 33), width: 10)
         let beamsView = BeamsView(beams: [a,b], color: .black)
+        #if os(macOS)
         render(beamsView.rendered, fileName: #function, testCaseName: "\(type(of: self))")
+        #endif
     }
 
     func testBeamsAngledDown() {
         let a = Beam(start: Point(x: 20, y: 20), end: Point(x: 100, y: 30), width: 10)
         let b = Beam(start: Point(x: 20, y: 33), end: Point(x: 100, y: 43), width: 10)
         let beamsView = BeamsView(beams: [a,b], color: .black)
+        #if os(macOS)
         render(beamsView.rendered, fileName: #function, testCaseName: "\(type(of: self))")
+        #endif
     }
 
     func testBeamsAngledUp() {
         let a = Beam(start: Point(x: 20, y: 20), end: Point(x: 100, y: 10), width: 10)
         let b = Beam(start: Point(x: 20, y: 33), end: Point(x: 100, y: 23), width: 10)
         let beamsView = BeamsView(beams: [a,b], color: .black)
+        #if os(macOS)
         render(beamsView.rendered, fileName: #function, testCaseName: "\(type(of: self))")
+        #endif
     }
 
     func testBeamStraightWithBeaming() {
         let beaming = Beaming([.init(start: 1), .init(stop: 1)])
         let beamsView = BeamsView(beaming: beaming, positions: [0, 100])
+        #if os(macOS)
         render(beamsView.rendered, fileName: #function, testCaseName: "\(type(of: self))")
+        #endif
     }
 
     func testBeamsStraightWithBeaming() {
         let beaming = Beaming([.init(start: 2), .init(stop: 2)])
         let beamsView = BeamsView(beaming: beaming, positions: [0, 100])
+        #if os(macOS)
         render(beamsView.rendered, fileName: #function, testCaseName: "\(type(of: self))")
+        #endif
     }
 
     func testBeamsAngledDownWithBeaming() {
@@ -87,7 +106,9 @@ class BeamsViewTests: XCTestCase {
             positions: [0, 100],
             configuration: configuration
         )
+        #if os(macOS)
         render(beamsView.rendered, fileName: #function, testCaseName: "\(type(of: self))")
+        #endif
     }
 
     func testBeamsAngledUpWithBeaming() {
@@ -98,7 +119,9 @@ class BeamsViewTests: XCTestCase {
             positions: [0, 100],
             configuration: configuration
         )
+        #if os(macOS)
         render(beamsView.rendered, fileName: #function, testCaseName: "\(type(of: self))")
+        #endif
     }
 
     func testBeamsAndBeamletsWithBeaming() {
@@ -109,7 +132,9 @@ class BeamsViewTests: XCTestCase {
             positions: [0, 100],
             configuration: configuration
         )
+        #if os(macOS)
         render(beamsView.rendered, fileName: #function, testCaseName: "\(type(of: self))")
+        #endif
     }
 
     func testBeamsAndBeamletsWithBeaming2() {
@@ -125,7 +150,9 @@ class BeamsViewTests: XCTestCase {
             positions: [0,50,100,150],
             configuration: configuration
         )
+        #if os(macOS)
         render(beamsView.rendered, fileName: #function, testCaseName: "\(type(of: self))")
+        #endif
     }
 
     func testBeamsWithRhythm() {
@@ -137,8 +164,8 @@ class BeamsViewTests: XCTestCase {
             positions: [0,200,300,350],
             configuration: configuration
         )
+        #if os(macOS)
         render(beamsView.rendered, fileName: #function, testCaseName: "\(type(of: self))")
+        #endif
     }
 }
-
-#endif
