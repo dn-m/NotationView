@@ -1,6 +1,6 @@
 # NotationView
 
-[![Build Status](https://travis-ci.org/dn-m/NotationView.svg?branch=master)](https://travis-ci.org/dn-m/NotationView)
+[![Build Status](https://travis-ci.org/dn-m/NotationView.svg?branch=latest)](https://travis-ci.org/dn-m/NotationView)
 
 The `NotationView` defines structures for graphically representing musical information.
 
